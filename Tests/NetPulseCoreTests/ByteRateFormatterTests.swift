@@ -1,5 +1,5 @@
 import Testing
-@testable import SpeedWidthCore
+@testable import NetPulseCore
 
 struct ByteRateFormatterTests {
     @Test func zeroIsFormattedExplicitly() {

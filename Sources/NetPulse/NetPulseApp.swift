@@ -1,6 +1,6 @@
 import SwiftUI
 import AppKit
-import SpeedWidthCore
+import NetPulseCore
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusItemController: StatusItemController?
@@ -13,7 +13,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 @main
-struct SpeedWidthApp: App {
+struct NetPulseApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {

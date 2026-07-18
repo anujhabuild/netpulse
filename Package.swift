@@ -2,21 +2,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "SpeedWidth",
+    name: "NetPulse",
     platforms: [
         .macOS(.v13)
     ],
     targets: [
         .target(
-            name: "SpeedWidthCore"
+            name: "NetPulseCore"
         ),
         .executableTarget(
-            name: "SpeedWidth",
-            dependencies: ["SpeedWidthCore"]
+            name: "NetPulse",
+            dependencies: ["NetPulseCore"]
         ),
         .testTarget(
-            name: "SpeedWidthCoreTests",
-            dependencies: ["SpeedWidthCore"]
+            name: "NetPulseCoreTests",
+            dependencies: ["NetPulseCore"]
         )
     ]
 )

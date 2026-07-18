@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>SpeedWidth</string>
+	<string>NetPulse</string>
 	<key>CFBundleDisplayName</key>
-	<string>Speed Width</string>
+	<string>NetPulse</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.anujsingh.speedwidth</string>
+	<string>com.anujsingh.netpulse</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleExecutable</key>
-	<string>SpeedWidth</string>
+	<string>NetPulse</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>13.0</string>
 	<key>LSUIElement</key>

@@ -1,6 +1,6 @@
 import SwiftUI
 import AppKit
-import SpeedWidthCore
+import NetPulseCore
 
 /// Detail panel shown when the menu bar item is clicked.
 struct PopoverContentView: View {
@@ -15,7 +15,6 @@ struct PopoverContentView: View {
             }
 
             SpeedSparklineView(downloadHistory: monitor.downloadHistory, uploadHistory: monitor.uploadHistory)
-                .frame(height: 60)
 
             Divider()
 

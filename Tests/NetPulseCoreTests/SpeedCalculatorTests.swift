@@ -1,6 +1,6 @@
 import Testing
 import Foundation
-@testable import SpeedWidthCore
+@testable import NetPulseCore
 
 struct SpeedCalculatorTests {
     private func counts(received: UInt64, sent: UInt64, at seconds: TimeInterval, names: [String] = ["en0"]) -> NetworkByteCounts {
