@@ -44,6 +44,9 @@ struct PopoverContentView: View {
         }
         .padding(16)
         .frame(width: 240)
+        // Semantic system material (not a hardcoded color) so this always
+        // matches the current macOS appearance/vibrancy, light or dark.
+        .background(.regularMaterial)
     }
 
     private var interfaceSummary: String {
