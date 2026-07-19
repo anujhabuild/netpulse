@@ -11,9 +11,10 @@ swift build -c release
 
 APP_DIR="build/NetPulse.app"
 rm -rf "$APP_DIR"
-mkdir -p "$APP_DIR/Contents/MacOS"
+mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Resources"
 
 cp ".build/release/NetPulse" "$APP_DIR/Contents/MacOS/NetPulse"
 cp "Sources/NetPulse/Info.plist" "$APP_DIR/Contents/Info.plist"
+cp "Assets/AppIcon.icns" "$APP_DIR/Contents/Resources/AppIcon.icns"
 
 echo "Built $APP_DIR"
