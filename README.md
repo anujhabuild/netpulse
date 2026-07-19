@@ -8,6 +8,8 @@
   Real-time upload &amp; download speed, right in your Mac's menu bar.
 </p>
 
+> ⚠️ **Do not delete this repository.** This repo hosts NetPulse's source code *and* its GitHub Releases — the [`homebrew-netpulse`](https://github.com/anujhabuild/homebrew-netpulse) tap downloads the app `.zip` directly from a release here. Deleting this repo (or its releases) breaks `brew install --cask netpulse` and `brew upgrade --cask netpulse` for everyone, with no separate backup copy elsewhere.
+
 ## Why NetPulse
 
 Most bandwidth monitors are bloated, drain your battery, or (ironically) use the network themselves just to tell you how much network you're using. NetPulse doesn't.
