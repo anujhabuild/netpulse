@@ -38,4 +38,34 @@ struct ByteRateFormatterTests {
         #expect(ByteRateFormatter.string(fromTotalBytes: 1024) == "1.0 KB")
         #expect(ByteRateFormatter.string(fromTotalBytes: UInt64(1024 * 1024 * 250)) == "250.0 MB")
     }
+
+    @Test func fixedWidthZeroIsZeroPadded() {
+        #expect(ByteRateFormatter.fixedWidthString(fromBytesPerSecond: 0) == "000.00 By/s")
+    }
+
+    @Test func fixedWidthSmallValueIsZeroPadded() {
+        #expect(ByteRateFormatter.fixedWidthString(fromBytesPerSecond: 9.234) == "009.23 By/s")
+    }
+
+    @Test func fixedWidthLargeValueKeepsThreeIntegerDigits() {
+        #expect(ByteRateFormatter.fixedWidthString(fromBytesPerSecond: 1024 * 512.345) == "512.35 KB/s")
+    }
+
+    @Test func fixedWidthRollsOverBeforeReachingFourDigits() {
+        // Rolls to the next unit once display would need a 4th integer
+        // digit (>= 1000), even though the underlying factor is /1024.
+        #expect(ByteRateFormatter.fixedWidthString(fromBytesPerSecond: 999) == "999.00 By/s")
+        #expect(ByteRateFormatter.fixedWidthString(fromBytesPerSecond: 1000) == "000.98 KB/s")
+    }
+
+    @Test func fixedWidthOutputHasConstantTotalWidth() {
+        // Every tier's unit label ("By/s", "KB/s", "MB/s", "GB/s") is the
+        // same 4 characters, and the number is always 6, so the total
+        // rendered width never changes and the menu bar never reflows.
+        let bytesTier = ByteRateFormatter.fixedWidthString(fromBytesPerSecond: 3)
+        let kilobytesTier = ByteRateFormatter.fixedWidthString(fromBytesPerSecond: 1024 * 999.9)
+        let megabytesTier = ByteRateFormatter.fixedWidthString(fromBytesPerSecond: 1024 * 1024 * 42)
+        #expect(bytesTier.count == kilobytesTier.count)
+        #expect(kilobytesTier.count == megabytesTier.count)
+    }
 }
